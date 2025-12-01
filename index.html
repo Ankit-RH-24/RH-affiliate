@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Mental Health Advocate | Rocket Health 🚀</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --orange-primary: #FF6B35;
+            --orange-hover: #FF8C5A;
+            --orange-light: #FFF4EF;
+            --dark: #1A1A1A;
+            --gray-dark: #4A4A4A;
+            --gray-medium: #6B6B6B;
+            --gray-light: #F5F5F5;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-cta {
+            background: var(--orange-primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--orange-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--orange-primary) 0%, #FF8C5A 100%);
+            padding: 100px 0 120px;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--orange-primary);
+            padding: 16px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255,255,255,0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 16px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 64px;
+            text-align: center;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--orange-primary);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--gray-medium);
+            line-height: 1.7;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            border-color: var(--orange-primary);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--gray-medium);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Stats Box */
+        .stats-box {
+            background: var(--dark);
+            border-radius: 24px;
+            padding: 64px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--orange-primary);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .stat-label {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: var(--gray-light);
+            padding: 80px;
+            border-radius: 24px;
+            margin: 64px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: var(--orange-primary);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0 auto 20px;
+        }
+
+        .step h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .step p {
+            color: var(--gray-medium);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--orange-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .benefit-content p {
+            font-size: 14px;
+            color: var(--gray-medium);
+            line-height: 1.6;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--gray-light);
+            border-radius: 24px;
+            padding: 64px;
+            max-width: 700px;
+            margin: 64px auto;
+        }
+
+        .form-section h3 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .form-section p {
+            text-align: center;
+            color: var(--gray-medium);
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--orange-primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--orange-primary);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: var(--orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.25);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            max-width: 800px;
+            margin: 80px auto;
+            text-align: center;
+            padding: 48px;
+            background: var(--orange-light);
+            border-radius: 20px;
+            border-left: 4px solid var(--orange-primary);
+        }
+
+        .quote-text {
+            font-size: 24px;
+            font-style: italic;
+            color: var(--dark);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .quote-author {
+            color: var(--gray-medium);
+            font-size: 14px;
+        }
+
+        /* Impact Stories */
+        .impact-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .impact-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .impact-avatar {
+            width: 56px;
+            height: 56px;
+            background: var(--orange-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--orange-primary);
+        }
+
+        .impact-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .impact-info p {
+            font-size: 13px;
+            color: var(--gray-medium);
+        }
+
+        .impact-text {
+            font-size: 15px;
+            color: var(--gray-dark);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Two Column Section */
+        .two-col-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .two-col-content h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .two-col-content p {
+            font-size: 16px;
+            color: var(--gray-medium);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .two-col-image {
+            background: var(--orange-light);
+            border-radius: 20px;
+            padding: 48px;
+            text-align: center;
+        }
+
+        .two-col-image .emoji {
+            font-size: 120px;
+            display: block;
+            margin-bottom: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 64px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .footer-tagline {
+            color: var(--orange-primary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange-primary);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Alternate Background */
+        .bg-light {
+            background: var(--gray-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-box { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .two-col-section { grid-template-columns: 1fr; gap: 40px; }
+            .benefits-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            .section-title { font-size: 32px; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .grid-4 { grid-template-columns: 1fr; }
+            .stats-box { grid-template-columns: 1fr; padding: 40px; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .hero-buttons { flex-direction: column; }
+            .form-section { padding: 40px 24px; }
+            .how-it-works { padding: 40px 24px; }
+            .two-col-content h2 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Rocket Health <span>🚀</span></div>
+            <a href="#join" class="nav-cta">Become an Advocate</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">Join the Movement</span>
+                <h1>Help Make Mental Healthcare Accessible Across India</h1>
+                <p>Become a Mental Health Advocate. Share resources, break stigma, and help people access the psychiatric care they need—all while building your impact as a change-maker.</p>
+                <div class="hero-buttons">
+                    <a href="#join" class="btn-primary">Become an Advocate</a>
+                    <a href="#how" class="btn-secondary">Learn How It Works</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section>
+        <div class="container">
+            <div class="two-col-section">
+                <div class="two-col-content">
+                    <h2>Someone You Know Might Be Struggling in Silence</h2>
+                    <p>1 in 7 Indians experience mental health conditions. Yet, access to quality psychiatric care remains limited, especially outside metro cities.</p>
+                    <p>The stigma around medication and therapy prevents millions from seeking help. Many don't even know where to start.</p>
+                    <p><strong>That's where you come in.</strong> As a Mental Health Advocate, you can be the bridge between someone struggling and the professional help they need.</p>
+                </div>
+                <div class="two-col-image">
+                    <span class="emoji">🤝</span>
+                    <h3 style="color: var(--orange-primary); font-size: 20px; font-weight: 700;">Your Voice Can Change Lives</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="stats-box">
+                <div class="stat-item">
+                    <span class="stat-number">1 in 7</span>
+                    <span class="stat-label">Indians experience mental health conditions</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">75%</span>
+                    <span class="stat-label">Don't have access to mental healthcare</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0.3</span>
+                    <span class="stat-label">Psychiatrists per 100,000 people in India</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Psychiatry Education -->
+    <section id="why">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Understanding Psychiatry</span>
+                <h2 class="section-title">Why Psychiatric Care Matters</h2>
+                <p class="section-subtitle">Before you become an advocate, it's important to understand what psychiatry is and when someone might need it.</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="card">
+                    <span class="card-icon">💊</span>
+                    <h3>Breaking Medication Stigma</h3>
+                    <p>Psychiatric medications are safe and scientifically proven. Mental health conditions often result from chemical imbalances that medication can treat effectively.</p>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🧠</span>
+                    <h3>Beyond Talk Therapy</h3>
+                    <p>While therapy helps with coping strategies, psychiatry treats underlying medical conditions like clinical depression, bipolar disorder, and ADHD.</p>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🫶</span>
+                    <h3>Holistic Approach</h3>
+                    <p>Rocket Health combines psychiatry with therapy, blood tests, and lifestyle support for comprehensive, personalized care.</p>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🇮🇳</span>
+                    <h3>Accessible Care</h3>
+                    <p>11+ qualified psychiatrists (MBBS, MD) available online in 13+ languages, serving tier 2 and tier 3 cities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- When to Refer -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">When to Refer</span>
+                <h2 class="section-title">Signs Someone Might Need Psychiatric Care</h2>
+                <p class="section-subtitle">As an advocate, you'll help people recognize when it's time to seek professional help. Here are key signs to look for:</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Emotional & Behavioral Signs</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Persistent sadness or hopelessness (2+ weeks)
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Extreme mood swings affecting daily life
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Intrusive thoughts or obsessive behaviors
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Panic attacks or uncontrollable anxiety
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Physical & Functional Signs</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Changes in sleep patterns or appetite
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Difficulty concentrating or making decisions
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Therapy alone hasn't provided relief
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Family history of mental health conditions
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Psychiatrist vs Psychologist -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Know the Difference</span>
+                <h2 class="section-title">Psychiatrist vs Psychologist</h2>
+                <p class="section-subtitle">Help people understand which professional they need</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card" style="border: 2px solid var(--orange-primary);">
+                    <h3 style="color: var(--orange-primary); font-size: 24px;">Psychiatrist</h3>
+                    <ul style="list-style: none; padding: 0; margin-top: 20px;">
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">✓</span>
+                            Medical doctor (MBBS, MD Psychiatry)
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">✓</span>
+                            Can prescribe medications
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">✓</span>
+                            Treats medical conditions
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">✓</span>
+                            Best for: Clinical depression, bipolar, ADHD, OCD, severe anxiety
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 24px;">Psychologist</h3>
+                    <ul style="list-style: none; padding: 0; margin-top: 20px;">
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--gray-medium); font-weight: 700;">✓</span>
+                            Mental health professional (MA/MSc)
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--gray-medium); font-weight: 700;">✓</span>
+                            Provides talk therapy
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--gray-medium); font-weight: 700;">✓</span>
+                            Focuses on coping strategies
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--gray-medium); font-weight: 700;">✓</span>
+                            Best for: Stress, relationships, life transitions, mild anxiety
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 40px; font-size: 16px; font-weight: 600; color: var(--dark);">
+                Many people benefit from both. At Rocket Health, psychiatrists and psychologists work together.
+            </p>
+        </div>
+    </section>
+
+    <!-- How It Works for Advocates -->
+    <section id="how" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Simple & Impactful</span>
+                <h2 class="section-title">How the Advocate Program Works</h2>
+                <p class="section-subtitle">Four simple steps to start making a difference</p>
+            </div>
+
+            <div class="how-it-works">
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Sign Up & Get Your Code</h4>
+                        <p>Receive your unique advocate code (e.g., ADVOCATE-PRIYA)</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Receive Resources</h4>
+                        <p>Get your certificate, badge, and educational content</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Share & Connect</h4>
+                        <p>Share your code with those who might need help</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>Track Your Impact</h4>
+                        <p>Watch your dashboard as you help people access care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What You Get</span>
+                <h2 class="section-title">Mental Health Advocate Benefits</h2>
+                <p class="section-subtitle">More than just sharing links—become part of a movement</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <div class="benefit-content">
+                        <h4>Mental Health Champion Certificate</h4>
+                        <p>Downloadable certificate recognizing your commitment to mental health advocacy</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <div class="benefit-content">
+                        <h4>Digital Badge for Social Media</h4>
+                        <p>LinkedIn and Instagram badge to showcase your role as an advocate</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-content">
+                        <h4>Personal Impact Dashboard</h4>
+                        <p>Track how many people you've helped access mental healthcare</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📚</div>
+                    <div class="benefit-content">
+                        <h4>Exclusive Educational Content</h4>
+                        <p>Access to mental health resources, guides, and research to share with your community</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎓</div>
+                    <div class="benefit-content">
+                        <h4>Monthly Mental Health Webinars</h4>
+                        <p>Learn from psychiatrists and psychologists in exclusive advocate-only sessions</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">👥</div>
+                    <div class="benefit-content">
+                        <h4>Advocate Community Access</h4>
+                        <p>Connect with other advocates, share experiences, and learn best practices</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-content">
+                        <h4>Early Access to New Services</h4>
+                        <p>Be the first to know about and share new mental health services and features</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">✨</div>
+                    <div class="benefit-content">
+                        <h4>Featured on Our Partners Page</h4>
+                        <p>Recognition on our website as a Mental Health Champion making real impact</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Should Join -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Join Us</span>
+                <h2 class="section-title">Who Should Become an Advocate?</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <span class="card-icon">🌱</span>
+                    <h3>Community Champions</h3>
+                    <p>Mental health supporters, student leaders, NGO workers, peer support advocates</p>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🩺</span>
+                    <h3>Healthcare Professionals</h3>
+                    <p>Psychologists, therapists, general practitioners, wellness coaches who want to refer clients</p>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">💼</span>
+                    <h3>HR & Wellness Leaders</h3>
+                    <p>Corporate wellness coordinators, HR professionals supporting employee mental health</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stories -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Real Impact</span>
+                <h2 class="section-title">Stories from Our Advocates</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="impact-card">
+                    <div class="impact-header">
+                        <div class="impact-avatar">PR</div>
+                        <div class="impact-info">
+                            <h4>Priya R.</h4>
+                            <p>University Counselor • 47 referrals</p>
+                        </div>
+                    </div>
+                    <p class="impact-text">"As a counselor, I often met students who needed more than therapy. Having Rocket Health as a trusted psychiatric referral has been invaluable. I've helped 47 students access proper diagnosis and treatment."</p>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-header">
+                        <div class="impact-avatar">AK</div>
+                        <div class="impact-info">
+                            <h4>Arjun K.</h4>
+                            <p>Mental Health Advocate • 23 referrals</p>
+                        </div>
+                    </div>
+                    <p class="impact-text">"I struggled with my own mental health journey, so I know how important it is to have the right resources. Sharing my advocate code has helped friends and followers take that first step toward getting help."</p>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-header">
+                        <div class="impact-avatar">SM</div>
+                        <div class="impact-info">
+                            <h4>Dr. Sneha M.</h4>
+                            <p>General Practitioner • 31 referrals</p>
+                        </div>
+                    </div>
+                    <p class="impact-text">"Many of my patients need psychiatric evaluation but don't know where to start. Rocket Health's accessibility and quality made it easy to refer them with confidence. The follow-up communication is excellent."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section>
+        <div class="container">
+            <div class="quote-section">
+                <p class="quote-text">"You don't have to be a mental health professional to make a difference. Sometimes, all someone needs is a gentle nudge toward help and a trusted resource."</p>
+                <p class="quote-author">— Dr. Ritika Sinha, Co-Founder, Rocket Health</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign Up Form -->
+    <section id="join" class="bg-light">
+        <div class="container">
+            <div class="form-section">
+                <h3>Become a Mental Health Advocate</h3>
+                <p>Join hundreds of advocates helping make mental healthcare accessible across India</p>
+
+                <form id="advocateForm">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" required placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" required placeholder="+91 XXXXX XXXXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Social Media Handle (Optional)</label>
+                        <input type="text" placeholder="@yourhandle or profile link">
+                    </div>
+
+                    <div class="form-group">
+                        <label>I am a *</label>
+                        <select required>
+                            <option value="">Select your role</option>
+                            <option value="community">Community Advocate / Mental Health Supporter</option>
+                            <option value="student">Student Leader / University Group</option>
+                            <option value="ngo">NGO Worker / Social Organization</option>
+                            <option value="therapist">Psychologist / Therapist</option>
+                            <option value="doctor">General Practitioner / Medical Professional</option>
+                            <option value="wellness">Wellness Coach / Counselor</option>
+                            <option value="hr">HR Professional / Corporate Wellness</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Why do you want to become a Mental Health Advocate? *</label>
+                        <textarea required placeholder="Share your motivation—what drives you to help others access mental healthcare?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>How do you plan to share mental health resources? (Optional)</label>
+                        <textarea placeholder="E.g., social media, community groups, professional network, student organizations, etc."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Join as Mental Health Advocate →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Rocket Health 🚀</h3>
+                    <p>We're building modern, stigma-free healthcare for young India. From therapy to psychiatry to sexual health—we're here to help you live your healthiest life.</p>
+                    <p class="footer-tagline">Cancelling stigma one day at a time 🧡</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.rockethealth.app/mental-health">Mental Health</a></li>
+                        <li><a href="https://www.rockethealth.app/mental-health/psychiatry">Psychiatry</a></li>
+                        <li><a href="https://www.rockethealth.app/medical-team">Our Team</a></li>
+                        <li><a href="https://www.rockethealth.app/centralized-faqs">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.rockethealth.app/about-us">About Us</a></li>
+                        <li><a href="https://www.rockethealth.app/">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.instagram.com/rocket.health/">Instagram</a></li>
+                        <li><a href="https://in.linkedin.com/company/rockethealthindia">LinkedIn</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rocket Health. All rights reserved. | Building healthcare for young India 🇮🇳</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('advocateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! This is a demo form. In production, this would submit to your backend and send you the advocate details + generate their unique code.');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
