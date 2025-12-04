@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Become a Mental Health Advocate | Rocket Health 🚀</title>
+    <title>Mental Health Champion Program | Rocket Health 🚀</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -216,46 +216,6 @@
             gap: 32px;
         }
 
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        /* Cards */
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-            border-color: var(--orange-primary);
-        }
-
-        .card-icon {
-            font-size: 48px;
-            margin-bottom: 24px;
-            display: block;
-        }
-
-        .card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: var(--gray-medium);
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
         /* Stats Box */
         .stats-box {
             background: var(--dark);
@@ -332,7 +292,7 @@
             line-height: 1.6;
         }
 
-        /* Benefits Grid */
+        /* Benefits Grid - HIGHLIGHTED */
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -343,34 +303,41 @@
         .benefit-item {
             display: flex;
             align-items: flex-start;
-            gap: 16px;
+            gap: 20px;
             background: white;
-            padding: 24px;
-            border-radius: 12px;
-            border: 1px solid rgba(0,0,0,0.06);
+            padding: 32px;
+            border-radius: 16px;
+            border: 2px solid rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            border-color: var(--orange-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.15);
         }
 
         .benefit-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--orange-light);
-            border-radius: 10px;
+            width: 56px;
+            height: 56px;
+            background: var(--orange-primary);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 28px;
             flex-shrink: 0;
         }
 
         .benefit-content h4 {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .benefit-content p {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--gray-medium);
             line-height: 1.6;
         }
@@ -636,7 +603,6 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .grid-4 { grid-template-columns: repeat(2, 1fr); }
             .grid-3 { grid-template-columns: repeat(2, 1fr); }
             .steps-grid { grid-template-columns: repeat(2, 1fr); }
             .stats-box { grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -650,7 +616,6 @@
             .hero p { font-size: 18px; }
             .section-title { font-size: 32px; }
             .grid-2 { grid-template-columns: 1fr; }
-            .grid-4 { grid-template-columns: 1fr; }
             .stats-box { grid-template-columns: 1fr; padding: 40px; }
             .steps-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -666,7 +631,7 @@
     <header>
         <nav>
             <div class="logo">Rocket Health <span>🚀</span></div>
-            <a href="#join" class="nav-cta">Become an Advocate</a>
+            <a href="#join" class="nav-cta">Join as Champion</a>
         </nav>
     </header>
 
@@ -674,12 +639,12 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-tag">Join the Movement</span>
-                <h1>Help Make Mental Healthcare Accessible Across India</h1>
-                <p>Become a Mental Health Advocate. Share resources, break stigma, and help people access the psychiatric care they need—all while building your impact as a change-maker.</p>
+                <span class="hero-tag">For Psychologists & Therapists</span>
+                <h1>Become a Mental Health Champion</h1>
+                <p>Refer clients who need psychiatric care to qualified psychiatrists. Get recognition, resources, and track your impact—all while strengthening your professional network.</p>
                 <div class="hero-buttons">
-                    <a href="#join" class="btn-primary">Become an Advocate</a>
-                    <a href="#how" class="btn-secondary">Learn How It Works</a>
+                    <a href="#join" class="btn-primary">Join the Program</a>
+                    <a href="#benefits" class="btn-secondary">See Benefits</a>
                 </div>
             </div>
         </div>
@@ -690,14 +655,14 @@
         <div class="container">
             <div class="two-col-section">
                 <div class="two-col-content">
-                    <h2>Someone You Know Might Be Struggling in Silence</h2>
-                    <p>1 in 7 Indians experience mental health conditions. Yet, access to quality psychiatric care remains limited, especially outside metro cities.</p>
-                    <p>The stigma around medication and therapy prevents millions from seeking help. Many don't even know where to start.</p>
-                    <p><strong>That's where you come in.</strong> As a Mental Health Advocate, you can be the bridge between someone struggling and the professional help they need.</p>
+                    <h2>Your Clients Deserve Comprehensive Care</h2>
+                    <p>As a psychologist or therapist, you know when a client needs more than talk therapy alone. Conditions like clinical depression, bipolar disorder, severe anxiety, ADHD, and OCD often require psychiatric evaluation and medication management.</p>
+                    <p>But finding qualified, accessible psychiatrists—especially for clients in tier 2 and tier 3 cities—can be challenging.</p>
+                    <p><strong>That's where the Mental Health Champion program comes in.</strong> Partner with Rocket Health to give your clients seamless access to quality psychiatric care.</p>
                 </div>
                 <div class="two-col-image">
                     <span class="emoji">🤝</span>
-                    <h3 style="color: var(--orange-primary); font-size: 20px; font-weight: 700;">Your Voice Can Change Lives</h3>
+                    <h3 style="color: var(--orange-primary); font-size: 20px; font-weight: 700;">Trusted Referral Partnership</h3>
                 </div>
             </div>
         </div>
@@ -708,183 +673,28 @@
         <div class="container">
             <div class="stats-box">
                 <div class="stat-item">
-                    <span class="stat-number">1 in 7</span>
-                    <span class="stat-label">Indians experience mental health conditions</span>
+                    <span class="stat-number">11+</span>
+                    <span class="stat-label">Qualified Psychiatrists (MBBS, MD)</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">75%</span>
-                    <span class="stat-label">Don't have access to mental healthcare</span>
+                    <span class="stat-number">13+</span>
+                    <span class="stat-label">Languages Available</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">0.3</span>
-                    <span class="stat-label">Psychiatrists per 100,000 people in India</span>
+                    <span class="stat-number">35,000+</span>
+                    <span class="stat-label">Sessions Completed</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Psychiatry Education -->
-    <section id="why">
+    <!-- How It Works -->
+    <section id="how">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Understanding Psychiatry</span>
-                <h2 class="section-title">Why Psychiatric Care Matters</h2>
-                <p class="section-subtitle">Before you become an advocate, it's important to understand what psychiatry is and when someone might need it.</p>
-            </div>
-
-            <div class="grid-4">
-                <div class="card">
-                    <span class="card-icon">💊</span>
-                    <h3>Breaking Medication Stigma</h3>
-                    <p>Psychiatric medications are safe and scientifically proven. Mental health conditions often result from chemical imbalances that medication can treat effectively.</p>
-                </div>
-
-                <div class="card">
-                    <span class="card-icon">🧠</span>
-                    <h3>Beyond Talk Therapy</h3>
-                    <p>While therapy helps with coping strategies, psychiatry treats underlying medical conditions like clinical depression, bipolar disorder, and ADHD.</p>
-                </div>
-
-                <div class="card">
-                    <span class="card-icon">🫶</span>
-                    <h3>Holistic Approach</h3>
-                    <p>Rocket Health combines psychiatry with therapy, blood tests, and lifestyle support for comprehensive, personalized care.</p>
-                </div>
-
-                <div class="card">
-                    <span class="card-icon">🇮🇳</span>
-                    <h3>Accessible Care</h3>
-                    <p>11+ qualified psychiatrists (MBBS, MD) available online in 13+ languages, serving tier 2 and tier 3 cities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- When to Refer -->
-    <section class="bg-light">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">When to Refer</span>
-                <h2 class="section-title">Signs Someone Might Need Psychiatric Care</h2>
-                <p class="section-subtitle">As an advocate, you'll help people recognize when it's time to seek professional help. Here are key signs to look for:</p>
-            </div>
-
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Emotional & Behavioral Signs</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
-                            Persistent sadness or hopelessness (2+ weeks)
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
-                            Extreme mood swings affecting daily life
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
-                            Intrusive thoughts or obsessive behaviors
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
-                            Panic attacks or uncontrollable anxiety
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3>Physical & Functional Signs</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
-                            Changes in sleep patterns or appetite
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
-                            Difficulty concentrating or making decisions
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
-                            Therapy alone hasn't provided relief
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
-                            Family history of mental health conditions
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Psychiatrist vs Psychologist -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Know the Difference</span>
-                <h2 class="section-title">Psychiatrist vs Psychologist</h2>
-                <p class="section-subtitle">Help people understand which professional they need</p>
-            </div>
-
-            <div class="grid-2">
-                <div class="card" style="border: 2px solid var(--orange-primary);">
-                    <h3 style="color: var(--orange-primary); font-size: 24px;">Psychiatrist</h3>
-                    <ul style="list-style: none; padding: 0; margin-top: 20px;">
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">✓</span>
-                            Medical doctor (MBBS, MD Psychiatry)
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">✓</span>
-                            Can prescribe medications
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">✓</span>
-                            Treats medical conditions
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
-                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">✓</span>
-                            Best for: Clinical depression, bipolar, ADHD, OCD, severe anxiety
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3 style="font-size: 24px;">Psychologist</h3>
-                    <ul style="list-style: none; padding: 0; margin-top: 20px;">
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
-                            <span style="position: absolute; left: 0; color: var(--gray-medium); font-weight: 700;">✓</span>
-                            Mental health professional (MA/MSc)
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
-                            <span style="position: absolute; left: 0; color: var(--gray-medium); font-weight: 700;">✓</span>
-                            Provides talk therapy
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
-                            <span style="position: absolute; left: 0; color: var(--gray-medium); font-weight: 700;">✓</span>
-                            Focuses on coping strategies
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 24px; position: relative; color: var(--gray-dark);">
-                            <span style="position: absolute; left: 0; color: var(--gray-medium); font-weight: 700;">✓</span>
-                            Best for: Stress, relationships, life transitions, mild anxiety
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <p style="text-align: center; margin-top: 40px; font-size: 16px; font-weight: 600; color: var(--dark);">
-                Many people benefit from both. At Rocket Health, psychiatrists and psychologists work together.
-            </p>
-        </div>
-    </section>
-
-    <!-- How It Works for Advocates -->
-    <section id="how" class="bg-light">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Simple & Impactful</span>
-                <h2 class="section-title">How the Advocate Program Works</h2>
-                <p class="section-subtitle">Four simple steps to start making a difference</p>
+                <span class="section-tag">Simple Process</span>
+                <h2 class="section-title">How the Champion Program Works</h2>
+                <p class="section-subtitle">Four simple steps to start referring clients</p>
             </div>
 
             <div class="how-it-works">
@@ -892,54 +702,54 @@
                     <div class="step">
                         <div class="step-number">1</div>
                         <h4>Sign Up & Get Your Code</h4>
-                        <p>Receive your unique advocate code (e.g., ADVOCATE-PRIYA)</p>
+                        <p>Receive your unique champion code (e.g., CHAMPION-DRPRIYA)</p>
                     </div>
 
                     <div class="step">
                         <div class="step-number">2</div>
-                        <h4>Receive Resources</h4>
-                        <p>Get your certificate, badge, and educational content</p>
+                        <h4>Receive Your Materials</h4>
+                        <p>Get your certificate, digital badge, and referral resources</p>
                     </div>
 
                     <div class="step">
                         <div class="step-number">3</div>
-                        <h4>Share & Connect</h4>
-                        <p>Share your code with those who might need help</p>
+                        <h4>Refer Your Clients</h4>
+                        <p>Share your code when clients need psychiatric evaluation</p>
                     </div>
 
                     <div class="step">
                         <div class="step-number">4</div>
                         <h4>Track Your Impact</h4>
-                        <p>Watch your dashboard as you help people access care</p>
+                        <p>Monitor referrals and client outcomes in your dashboard</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
-    <section>
+    <!-- Benefits - HIGHLIGHTED SECTION -->
+    <section id="benefits" class="bg-light">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">What You Get</span>
-                <h2 class="section-title">Mental Health Advocate Benefits</h2>
-                <p class="section-subtitle">More than just sharing links—become part of a movement</p>
+                <span class="section-tag">Program Benefits</span>
+                <h2 class="section-title">What You Get as a Mental Health Champion</h2>
+                <p class="section-subtitle">Build your professional network while helping clients access comprehensive care</p>
             </div>
 
             <div class="benefits-grid">
                 <div class="benefit-item">
                     <div class="benefit-icon">🏆</div>
                     <div class="benefit-content">
-                        <h4>Mental Health Champion Certificate</h4>
-                        <p>Downloadable certificate recognizing your commitment to mental health advocacy</p>
+                        <h4>Professional Recognition Certificate</h4>
+                        <p>Downloadable "Mental Health Champion" certificate to display in your practice or clinic, showcasing your commitment to comprehensive care</p>
                     </div>
                 </div>
 
                 <div class="benefit-item">
                     <div class="benefit-icon">📱</div>
                     <div class="benefit-content">
-                        <h4>Digital Badge for Social Media</h4>
-                        <p>LinkedIn and Instagram badge to showcase your role as an advocate</p>
+                        <h4>Digital Badge for LinkedIn & Instagram</h4>
+                        <p>Professional badge to add to your social profiles, highlighting your partnership with Rocket Health and strengthening your credibility</p>
                     </div>
                 </div>
 
@@ -947,39 +757,39 @@
                     <div class="benefit-icon">📊</div>
                     <div class="benefit-content">
                         <h4>Personal Impact Dashboard</h4>
-                        <p>Track how many people you've helped access mental healthcare</p>
+                        <p>Real-time tracking of your referrals, client outcomes, and the impact you're making in mental healthcare accessibility</p>
                     </div>
                 </div>
 
                 <div class="benefit-item">
                     <div class="benefit-icon">📚</div>
                     <div class="benefit-content">
-                        <h4>Exclusive Educational Content</h4>
-                        <p>Access to mental health resources, guides, and research to share with your community</p>
+                        <h4>Exclusive Clinical Resources</h4>
+                        <p>Access to psychiatry guidelines, referral protocols, research papers, and educational materials to share with clients</p>
                     </div>
                 </div>
 
                 <div class="benefit-item">
                     <div class="benefit-icon">🎓</div>
                     <div class="benefit-content">
-                        <h4>Monthly Mental Health Webinars</h4>
-                        <p>Learn from psychiatrists and psychologists in exclusive advocate-only sessions</p>
+                        <h4>Monthly Professional Webinars</h4>
+                        <p>Champion-only sessions with psychiatrists covering treatment protocols, medication updates, and collaborative care best practices</p>
                     </div>
                 </div>
 
                 <div class="benefit-item">
                     <div class="benefit-icon">👥</div>
                     <div class="benefit-content">
-                        <h4>Advocate Community Access</h4>
-                        <p>Connect with other advocates, share experiences, and learn best practices</p>
+                        <h4>Professional Network Access</h4>
+                        <p>Connect with other psychologists, therapists, and mental health professionals in an exclusive community for case discussions and collaboration</p>
                     </div>
                 </div>
 
                 <div class="benefit-item">
                     <div class="benefit-icon">⚡</div>
                     <div class="benefit-content">
-                        <h4>Early Access to New Services</h4>
-                        <p>Be the first to know about and share new mental health services and features</p>
+                        <h4>Priority Client Support</h4>
+                        <p>Your referred clients get priority booking and dedicated support, ensuring seamless coordination between your therapy and their psychiatric care</p>
                     </div>
                 </div>
 
@@ -987,83 +797,118 @@
                     <div class="benefit-icon">✨</div>
                     <div class="benefit-content">
                         <h4>Featured on Our Partners Page</h4>
-                        <p>Recognition on our website as a Mental Health Champion making real impact</p>
+                        <p>Recognition on Rocket Health's website as a Mental Health Champion, building your online presence and professional reputation</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Who Should Join -->
-    <section class="bg-light">
+    <!-- When to Refer -->
+    <section>
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Join Us</span>
-                <h2 class="section-title">Who Should Become an Advocate?</h2>
+                <span class="section-tag">Clinical Guidelines</span>
+                <h2 class="section-title">When to Refer Clients to a Psychiatrist</h2>
+                <p class="section-subtitle">Key indicators that psychiatric evaluation would benefit your client</p>
             </div>
 
-            <div class="grid-3">
-                <div class="card">
-                    <span class="card-icon">🌱</span>
-                    <h3>Community Champions</h3>
-                    <p>Mental health supporters, student leaders, NGO workers, peer support advocates</p>
+            <div class="grid-2">
+                <div style="background: white; padding: 40px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06);">
+                    <h3 style="color: var(--orange-primary); margin-bottom: 20px;">Clinical Indicators</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Symptoms not responding to therapy alone
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Suspected mood disorders (bipolar, major depression)
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            ADHD assessment and medication management needed
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Severe OCD with significant functional impairment
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Psychotic symptoms or thought disorders
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="card">
-                    <span class="card-icon">🩺</span>
-                    <h3>Healthcare Professionals</h3>
-                    <p>Psychologists, therapists, general practitioners, wellness coaches who want to refer clients</p>
-                </div>
-
-                <div class="card">
-                    <span class="card-icon">💼</span>
-                    <h3>HR & Wellness Leaders</h3>
-                    <p>Corporate wellness coordinators, HR professionals supporting employee mental health</p>
+                <div style="background: white; padding: 40px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06);">
+                    <h3 style="color: var(--orange-primary); margin-bottom: 20px;">Safety & Risk Factors</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Self-harm ideation or behaviors
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Suicidal thoughts requiring medical assessment
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Substance use disorders needing medical intervention
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Eating disorders requiring medical monitoring
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                            <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
+                            Sleep disorders with possible medical causes
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Impact Stories -->
-    <section>
+    <section class="bg-light">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Real Impact</span>
-                <h2 class="section-title">Stories from Our Advocates</h2>
+                <h2 class="section-title">What Mental Health Champions Are Saying</h2>
             </div>
 
             <div class="grid-3">
                 <div class="impact-card">
                     <div class="impact-header">
-                        <div class="impact-avatar">PR</div>
-                        <div class="impact-info">
-                            <h4>Priya R.</h4>
-                            <p>University Counselor • 47 referrals</p>
-                        </div>
-                    </div>
-                    <p class="impact-text">"As a counselor, I often met students who needed more than therapy. Having Rocket Health as a trusted psychiatric referral has been invaluable. I've helped 47 students access proper diagnosis and treatment."</p>
-                </div>
-
-                <div class="impact-card">
-                    <div class="impact-header">
-                        <div class="impact-avatar">AK</div>
-                        <div class="impact-info">
-                            <h4>Arjun K.</h4>
-                            <p>Mental Health Advocate • 23 referrals</p>
-                        </div>
-                    </div>
-                    <p class="impact-text">"I struggled with my own mental health journey, so I know how important it is to have the right resources. Sharing my advocate code has helped friends and followers take that first step toward getting help."</p>
-                </div>
-
-                <div class="impact-card">
-                    <div class="impact-header">
                         <div class="impact-avatar">SM</div>
                         <div class="impact-info">
                             <h4>Dr. Sneha M.</h4>
-                            <p>General Practitioner • 31 referrals</p>
+                            <p>Clinical Psychologist • 31 referrals</p>
                         </div>
                     </div>
-                    <p class="impact-text">"Many of my patients need psychiatric evaluation but don't know where to start. Rocket Health's accessibility and quality made it easy to refer them with confidence. The follow-up communication is excellent."</p>
+                    <p class="impact-text">"Many of my clients needed psychiatric evaluation but didn't know where to start. Rocket Health's accessibility and quality made referrals seamless. The coordination between therapy and psychiatry has been excellent."</p>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-header">
+                        <div class="impact-avatar">RK</div>
+                        <div class="impact-info">
+                            <h4>Dr. Rohan K.</h4>
+                            <p>Counseling Psychologist • 24 referrals</p>
+                        </div>
+                    </div>
+                    <p class="impact-text">"Having a trusted psychiatric partner has strengthened my practice. Clients appreciate the integrated approach, and I can track their progress across both therapy and medication management."</p>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-header">
+                        <div class="impact-avatar">AP</div>
+                        <div class="impact-info">
+                            <h4>Ananya P.</h4>
+                            <p>Therapist • 18 referrals</p>
+                        </div>
+                    </div>
+                    <p class="impact-text">"The dashboard helps me understand which clients completed their psychiatric consultations. The professional network and monthly webinars have also been invaluable for my own learning."</p>
                 </div>
             </div>
         </div>
@@ -1073,7 +918,7 @@
     <section>
         <div class="container">
             <div class="quote-section">
-                <p class="quote-text">"You don't have to be a mental health professional to make a difference. Sometimes, all someone needs is a gentle nudge toward help and a trusted resource."</p>
+                <p class="quote-text">"Mental health care works best when professionals collaborate. The Champion program creates that bridge between therapy and psychiatry."</p>
                 <p class="quote-author">— Dr. Ritika Sinha, Co-Founder, Rocket Health</p>
             </div>
         </div>
@@ -1083,13 +928,13 @@
     <section id="join" class="bg-light">
         <div class="container">
             <div class="form-section">
-                <h3>Become a Mental Health Advocate</h3>
-                <p>Join hundreds of advocates helping make mental healthcare accessible across India</p>
+                <h3>Join as a Mental Health Champion</h3>
+                <p>Start referring clients to quality psychiatric care today</p>
 
-                <form id="advocateForm">
+                <form id="championForm">
                     <div class="form-group">
                         <label>Full Name *</label>
-                        <input type="text" required placeholder="Enter your full name">
+                        <input type="text" required placeholder="Dr. Your Name">
                     </div>
 
                     <div class="form-group">
@@ -1103,36 +948,44 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Social Media Handle (Optional)</label>
-                        <input type="text" placeholder="@yourhandle or profile link">
-                    </div>
-
-                    <div class="form-group">
-                        <label>I am a *</label>
+                        <label>Professional Role *</label>
                         <select required>
                             <option value="">Select your role</option>
-                            <option value="community">Community Advocate / Mental Health Supporter</option>
-                            <option value="student">Student Leader / University Group</option>
-                            <option value="ngo">NGO Worker / Social Organization</option>
-                            <option value="therapist">Psychologist / Therapist</option>
-                            <option value="doctor">General Practitioner / Medical Professional</option>
-                            <option value="wellness">Wellness Coach / Counselor</option>
-                            <option value="hr">HR Professional / Corporate Wellness</option>
-                            <option value="other">Other</option>
+                            <option value="clinical-psychologist">Clinical Psychologist</option>
+                            <option value="counseling-psychologist">Counseling Psychologist</option>
+                            <option value="therapist">Therapist / Counselor</option>
+                            <option value="psychotherapist">Psychotherapist</option>
+                            <option value="other">Other Mental Health Professional</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label>Why do you want to become a Mental Health Advocate? *</label>
-                        <textarea required placeholder="Share your motivation—what drives you to help others access mental healthcare?"></textarea>
+                        <label>Years of Practice *</label>
+                        <select required>
+                            <option value="">Select experience</option>
+                            <option value="0-2">0-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="6-10">6-10 years</option>
+                            <option value="10+">10+ years</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
-                        <label>How do you plan to share mental health resources? (Optional)</label>
-                        <textarea placeholder="E.g., social media, community groups, professional network, student organizations, etc."></textarea>
+                        <label>LinkedIn Profile (Optional)</label>
+                        <input type="text" placeholder="linkedin.com/in/yourprofile">
                     </div>
 
-                    <button type="submit" class="submit-btn">Join as Mental Health Advocate →</button>
+                    <div class="form-group">
+                        <label>Practice Location / City *</label>
+                        <input type="text" required placeholder="Bangalore, Mumbai, etc.">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Why do you want to join the Champion program? *</label>
+                        <textarea required placeholder="Share your interest in collaborative mental healthcare..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Join as Mental Health Champion →</button>
                 </form>
             </div>
         </div>
@@ -1186,9 +1039,9 @@
     </footer>
 
     <script>
-        document.getElementById('advocateForm').addEventListener('submit', function(e) {
+        document.getElementById('championForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your interest! This is a demo form. In production, this would submit to your backend and send you the advocate details + generate their unique code.');
+            alert('Thank you for your interest! This is a demo form. In production, this would submit to your backend and send you the champion details + generate their unique code.');
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
