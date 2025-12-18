@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health Champion Program | Rocket Health 🚀</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,380 +14,632 @@
 
         :root {
             --orange-primary: #FF6B35;
-            --orange-hover: #FF8C5A;
-            --orange-light: #FFF4EF;
-            --dark: #1A1A1A;
-            --gray-dark: #4A4A4A;
-            --gray-medium: #6B6B6B;
-            --gray-light: #F5F5F5;
+            --orange-light: #FF8C5A;
+            --orange-glow: rgba(255, 107, 53, 0.3);
+            --peach: #FFE5DC;
+            --cream: #FFF8F5;
+            --dark: #1A1512;
+            --gray-900: #2C2520;
+            --gray-700: #4A423D;
+            --gray-500: #7A736E;
             --white: #FFFFFF;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             color: var(--dark);
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
+            background: var(--cream);
+            overflow-x: hidden;
         }
 
-        /* Header */
+        /* Animated gradient background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 140, 90, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 229, 220, 0.4) 0%, transparent 50%);
+            animation: gradientShift 20s ease infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-5%, 5%) rotate(5deg); }
+        }
+
+        /* Header with glassmorphism */
         header {
-            background: var(--white);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 107, 53, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
+            animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 20px 24px;
+            padding: 24px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
             color: var(--dark);
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            font-size: 24px;
+            animation: rocketFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes rocketFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(-5deg); }
         }
 
         .nav-cta {
-            background: var(--orange-primary);
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-light) 100%);
             color: white;
-            padding: 12px 28px;
-            border-radius: 8px;
+            padding: 14px 32px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
-            transition: all 0.2s ease;
+            font-size: 15px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 20px var(--orange-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-cta:hover::before {
+            left: 100%;
         }
 
         .nav-cta:hover {
-            background: var(--orange-hover);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--orange-glow);
         }
 
         /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 48px;
         }
 
-        /* Hero Section */
+        /* Hero Section with dramatic entrance */
         .hero {
-            background: linear-gradient(135deg, var(--orange-primary) 0%, #FF8C5A 100%);
-            padding: 100px 0 120px;
-            color: white;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--orange-primary) 0%, transparent 70%);
+            opacity: 0.12;
+            border-radius: 50%;
+            animation: heroOrb 8s ease-in-out infinite;
+        }
+
+        @keyframes heroOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-50px, 50px) scale(1.1); }
         }
 
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+            max-width: 900px;
+            z-index: 1;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-tag {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 8px 20px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 140, 90, 0.15) 100%);
+            color: var(--orange-primary);
+            padding: 10px 24px;
             border-radius: 50px;
             font-size: 14px;
             font-weight: 600;
-            margin-bottom: 24px;
-            border: 1px solid rgba(255,255,255,0.3);
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            backdrop-filter: blur(10px);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
         }
 
         .hero h1 {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
+            font-family: 'Poppins', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray-900) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            opacity: 0.95;
+            font-size: 22px;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 48px;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
-            justify-content: center;
+            gap: 20px;
             flex-wrap: wrap;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
         }
 
         .btn-primary {
-            background: white;
-            color: var(--orange-primary);
-            padding: 16px 36px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-light) 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 14px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s ease;
+            font-size: 17px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             border: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 32px var(--orange-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::after {
+            content: '→';
+            margin-left: -6px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover::after {
+            margin-left: 4px;
+            opacity: 1;
         }
 
         .btn-primary:hover {
-            background: rgba(255,255,255,0.95);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px var(--orange-glow);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: white;
-            padding: 16px 36px;
-            border-radius: 10px;
+            background: var(--white);
+            color: var(--dark);
+            padding: 18px 40px;
+            border-radius: 14px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s ease;
-            border: 2px solid rgba(255,255,255,0.3);
-            display: inline-block;
+            font-size: 17px;
+            transition: all 0.3s;
+            border: 2px solid rgba(26, 21, 18, 0.1);
         }
 
         .btn-secondary:hover {
-            border-color: white;
-            background: rgba(255,255,255,0.1);
+            border-color: var(--orange-primary);
+            background: var(--cream);
+            transform: translateY(-2px);
         }
 
         /* Section Styles */
         section {
-            padding: 100px 0;
+            padding: 120px 0;
+            position: relative;
         }
 
         .section-header {
-            max-width: 700px;
-            margin: 0 auto 64px;
+            max-width: 800px;
+            margin: 0 auto 80px;
             text-align: center;
         }
 
         .section-tag {
             display: inline-block;
             color: var(--orange-primary);
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 12px;
+            letter-spacing: 0.12em;
+            margin-bottom: 16px;
         }
 
         .section-title {
-            font-size: 42px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 56px;
             font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 16px;
+            line-height: 1.1;
             letter-spacing: -0.02em;
-            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--dark);
         }
 
         .section-subtitle {
-            font-size: 18px;
-            color: var(--gray-medium);
+            font-size: 20px;
+            color: var(--gray-700);
             line-height: 1.7;
         }
 
-        /* Grid Layouts */
+        /* Grid with staggered animations */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
+            gap: 40px;
         }
 
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 40px;
         }
 
-        /* Stats Box */
-        .stats-box {
-            background: var(--dark);
+        /* Beautiful cards with depth */
+        .card {
+            background: var(--white);
+            padding: 48px;
             border-radius: 24px;
-            padding: 64px;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange-primary), var(--orange-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 60px rgba(255, 107, 53, 0.15);
+            border-color: var(--orange-primary);
+        }
+
+        /* Stats with dramatic reveal */
+        .stats-box {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray-900) 100%);
+            border-radius: 32px;
+            padding: 80px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
-            margin: 80px 0;
+            gap: 60px;
+            margin: 100px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            animation: statsRotate 20s linear infinite;
+        }
+
+        @keyframes statsRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .stat-item {
-            color: white;
+            position: relative;
+            z-index: 1;
         }
 
         .stat-number {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--orange-primary);
-            margin-bottom: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 64px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
             display: block;
+            letter-spacing: -0.02em;
         }
 
         .stat-label {
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
             font-weight: 500;
         }
 
-        /* How It Works */
+        /* How It Works with flowing design */
         .how-it-works {
-            background: var(--gray-light);
+            background: var(--white);
             padding: 80px;
-            border-radius: 24px;
-            margin: 64px 0;
+            border-radius: 32px;
+            margin: 80px 0;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            position: relative;
+        }
+
+        .how-it-works::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--peach) 0%, transparent 70%);
+            opacity: 0.5;
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            margin-top: 48px;
+            gap: 40px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .step {
             text-align: center;
+            position: relative;
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: 100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--orange-primary), transparent);
+            z-index: -1;
+        }
+
+        .step:last-child::before {
+            display: none;
         }
 
         .step-number {
-            width: 56px;
-            height: 56px;
-            background: var(--orange-primary);
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-light) 100%);
             color: white;
-            border-radius: 12px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
             font-weight: 800;
-            margin: 0 auto 20px;
+            margin: 0 auto 28px;
+            box-shadow: 0 8px 24px var(--orange-glow);
+            transition: all 0.3s;
+        }
+
+        .step:hover .step-number {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .step h4 {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             color: var(--dark);
         }
 
         .step p {
-            color: var(--gray-medium);
-            font-size: 14px;
+            color: var(--gray-700);
+            font-size: 15px;
             line-height: 1.6;
         }
 
-        /* Benefits Grid - HIGHLIGHTED */
+        /* Benefits with premium feel */
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin-top: 48px;
+            gap: 32px;
+            margin-top: 60px;
         }
 
         .benefit-item {
             display: flex;
             align-items: flex-start;
-            gap: 20px;
-            background: white;
-            padding: 32px;
-            border-radius: 16px;
-            border: 2px solid rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
+            gap: 24px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--peach) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .benefit-item:hover::before {
+            opacity: 1;
         }
 
         .benefit-item:hover {
+            transform: translateX(8px);
             border-color: var(--orange-primary);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(255, 107, 53, 0.15);
+            box-shadow: 0 16px 48px rgba(255, 107, 53, 0.15);
         }
 
         .benefit-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--orange-primary);
-            border-radius: 12px;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-light) 100%);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 32px;
             flex-shrink: 0;
+            box-shadow: 0 8px 24px var(--orange-glow);
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-content {
+            position: relative;
+            z-index: 1;
         }
 
         .benefit-content h4 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .benefit-content p {
             font-size: 15px;
-            color: var(--gray-medium);
-            line-height: 1.6;
+            color: var(--gray-700);
+            line-height: 1.7;
         }
 
-        /* Form Section */
+        /* Form with elegant styling */
         .form-section {
-            background: var(--gray-light);
-            border-radius: 24px;
-            padding: 64px;
-            max-width: 700px;
-            margin: 64px auto;
+            background: var(--white);
+            border-radius: 32px;
+            padding: 80px;
+            max-width: 800px;
+            margin: 80px auto;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            box-shadow: 0 24px 60px rgba(255, 107, 53, 0.08);
         }
 
         .form-section h3 {
-            font-size: 32px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 42px;
             font-weight: 800;
             color: var(--dark);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             text-align: center;
+            letter-spacing: -0.02em;
         }
 
-        .form-section p {
+        .form-section > p {
             text-align: center;
-            color: var(--gray-medium);
-            margin-bottom: 40px;
-            font-size: 16px;
+            color: var(--gray-700);
+            margin-bottom: 48px;
+            font-size: 18px;
         }
 
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .form-group label {
             display: block;
             font-weight: 600;
             color: var(--dark);
-            margin-bottom: 8px;
-            font-size: 14px;
+            margin-bottom: 10px;
+            font-size: 15px;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 14px 16px;
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 8px;
-            font-size: 15px;
+            padding: 16px 20px;
+            border: 2px solid rgba(26, 21, 18, 0.1);
+            border-radius: 12px;
+            font-size: 16px;
             font-family: inherit;
-            transition: all 0.2s;
+            transition: all 0.3s;
+            background: var(--cream);
         }
 
         .form-group input:focus,
@@ -395,170 +647,238 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--orange-primary);
-            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.1);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 120px;
         }
 
         .submit-btn {
             width: 100%;
-            background: var(--orange-primary);
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-light) 100%);
             color: white;
-            padding: 16px;
+            padding: 20px;
             border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 16px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 18px;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 8px 32px var(--orange-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .submit-btn:hover {
-            background: var(--orange-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px var(--orange-glow);
         }
 
-        /* Quote Section */
+        /* Quote with elegant styling */
         .quote-section {
-            max-width: 800px;
-            margin: 80px auto;
+            max-width: 900px;
+            margin: 100px auto;
             text-align: center;
-            padding: 48px;
-            background: var(--orange-light);
-            border-radius: 20px;
-            border-left: 4px solid var(--orange-primary);
+            padding: 60px;
+            background: linear-gradient(135deg, var(--peach) 0%, var(--cream) 100%);
+            border-radius: 32px;
+            border-left: 6px solid var(--orange-primary);
+            position: relative;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            font-family: 'Fraunces', serif;
+            font-size: 120px;
+            color: var(--orange-primary);
+            opacity: 0.2;
+            line-height: 1;
         }
 
         .quote-text {
-            font-size: 24px;
-            font-style: italic;
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
             color: var(--dark);
-            line-height: 1.6;
-            margin-bottom: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .quote-author {
-            color: var(--gray-medium);
-            font-size: 14px;
+            color: var(--gray-700);
+            font-size: 16px;
+            font-weight: 600;
         }
 
-        /* Impact Stories */
+        /* Impact cards with personality */
         .impact-card {
-            background: white;
-            padding: 32px;
-            border-radius: 16px;
-            border: 1px solid rgba(0,0,0,0.06);
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.3s;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(255, 107, 53, 0.12);
         }
 
         .impact-header {
             display: flex;
             align-items: center;
-            gap: 16px;
-            margin-bottom: 16px;
+            gap: 20px;
+            margin-bottom: 20px;
         }
 
         .impact-avatar {
-            width: 56px;
-            height: 56px;
-            background: var(--orange-light);
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--orange-primary) 0%, var(--orange-light) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'Poppins', sans-serif;
             font-size: 24px;
-            font-weight: 700;
-            color: var(--orange-primary);
+            font-weight: 800;
+            color: white;
         }
 
         .impact-info h4 {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--dark);
         }
 
         .impact-info p {
-            font-size: 13px;
-            color: var(--gray-medium);
+            font-size: 14px;
+            color: var(--gray-700);
         }
 
         .impact-text {
-            font-size: 15px;
-            color: var(--gray-dark);
-            line-height: 1.7;
+            font-size: 16px;
+            color: var(--gray-700);
+            line-height: 1.8;
             font-style: italic;
         }
 
-        /* Two Column Section */
+        /* Two column with asymmetry */
         .two-col-section {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
             align-items: center;
         }
 
         .two-col-content h2 {
-            font-size: 38px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
             font-weight: 800;
             color: var(--dark);
-            margin-bottom: 20px;
+            margin-bottom: 28px;
             letter-spacing: -0.02em;
+            line-height: 1.1;
         }
 
         .two-col-content p {
-            font-size: 16px;
-            color: var(--gray-medium);
+            font-size: 18px;
+            color: var(--gray-700);
             line-height: 1.8;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .two-col-image {
-            background: var(--orange-light);
-            border-radius: 20px;
-            padding: 48px;
+            background: linear-gradient(135deg, var(--peach) 0%, var(--cream) 100%);
+            border-radius: 32px;
+            padding: 60px;
             text-align: center;
+            border: 1px solid rgba(255, 107, 53, 0.1);
         }
 
         .two-col-image .emoji {
-            font-size: 120px;
+            font-size: 140px;
             display: block;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
+            animation: emojiFloat 4s ease-in-out infinite;
         }
 
-        /* Footer */
+        @keyframes emojiFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Footer with depth */
         footer {
-            background: var(--dark);
-            color: rgba(255,255,255,0.7);
-            padding: 80px 0 40px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray-900) 100%);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 100px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--orange-primary), transparent);
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 64px;
-            margin-bottom: 48px;
+            gap: 80px;
+            margin-bottom: 60px;
         }
 
         .footer-brand h3 {
+            font-family: 'Poppins', sans-serif;
             color: white;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 16px;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
         }
 
         .footer-brand p {
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
         .footer-tagline {
             color: var(--orange-primary);
-            font-weight: 600;
-            font-size: 14px;
+            font-weight: 700;
+            font-size: 15px;
         }
 
         .footer-section h4 {
@@ -566,8 +886,8 @@
             font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 20px;
+            letter-spacing: 0.08em;
+            margin-bottom: 24px;
         }
 
         .footer-links {
@@ -575,54 +895,74 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
+            font-size: 15px;
+            transition: all 0.3s;
+            display: inline-block;
         }
 
         .footer-links a:hover {
             color: var(--orange-primary);
+            transform: translateX(4px);
         }
 
         .footer-bottom {
-            padding-top: 32px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            font-size: 13px;
+            font-size: 14px;
         }
 
-        /* Alternate Background */
-        .bg-light {
-            background: var(--gray-light);
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
+            .container { padding: 0 32px; }
+            nav { padding: 20px 32px; }
+            .hero h1 { font-size: 56px; }
+            .section-title { font-size: 44px; }
             .grid-3 { grid-template-columns: repeat(2, 1fr); }
             .steps-grid { grid-template-columns: repeat(2, 1fr); }
-            .stats-box { grid-template-columns: repeat(3, 1fr); gap: 32px; }
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-            .two-col-section { grid-template-columns: 1fr; gap: 40px; }
+            .stats-box { grid-template-columns: repeat(3, 1fr); padding: 60px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
+            .two-col-section { grid-template-columns: 1fr; gap: 60px; }
             .benefits-grid { grid-template-columns: 1fr; }
+            .step::before { display: none; }
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
+            .container { padding: 0 24px; }
+            nav { padding: 16px 24px; }
+            .hero { min-height: auto; padding: 80px 0; }
+            .hero h1 { font-size: 40px; }
             .hero p { font-size: 18px; }
-            .section-title { font-size: 32px; }
+            .section-title { font-size: 36px; }
             .grid-2 { grid-template-columns: 1fr; }
-            .stats-box { grid-template-columns: 1fr; padding: 40px; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .stats-box { grid-template-columns: 1fr; padding: 40px; gap: 40px; }
             .steps-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
             .hero-buttons { flex-direction: column; }
-            .form-section { padding: 40px 24px; }
-            .how-it-works { padding: 40px 24px; }
-            .two-col-content h2 { font-size: 28px; }
+            .form-section { padding: 48px 32px; }
+            .how-it-works { padding: 48px 32px; }
+            .two-col-content h2 { font-size: 36px; }
+            .quote-text { font-size: 22px; }
+            section { padding: 80px 0; }
         }
     </style>
 </head>
@@ -640,8 +980,8 @@
         <div class="container">
             <div class="hero-content">
                 <span class="hero-tag">For Psychologists & Therapists</span>
-                <h1>Become a Mental Health Champion</h1>
-                <p>Refer clients who need psychiatric care to qualified psychiatrists. Get recognition, resources, and track your impact—all while strengthening your professional network.</p>
+                <h1>Help Spread Affordable Mental Healthcare Across India</h1>
+                <p>Join our Mental Health Champion program. Refer clients who need psychiatric care, earn ₹250 per referral, and give your clients 10% off—making quality mental healthcare accessible to all.</p>
                 <div class="hero-buttons">
                     <a href="#join" class="btn-primary">Join the Program</a>
                     <a href="#benefits" class="btn-secondary">See Benefits</a>
@@ -651,27 +991,27 @@
     </section>
 
     <!-- The Challenge -->
-    <section>
+    <section class="reveal">
         <div class="container">
             <div class="two-col-section">
                 <div class="two-col-content">
-                    <h2>Your Clients Deserve Comprehensive Care</h2>
-                    <p>As a psychologist or therapist, you know when a client needs more than talk therapy alone. Conditions like clinical depression, bipolar disorder, severe anxiety, ADHD, and OCD often require psychiatric evaluation and medication management.</p>
-                    <p>But finding qualified, accessible psychiatrists—especially for clients in tier 2 and tier 3 cities—can be challenging.</p>
-                    <p><strong>That's where the Mental Health Champion program comes in.</strong> Partner with Rocket Health to give your clients seamless access to quality psychiatric care.</p>
+                    <h2>Making Mental Healthcare Affordable & Accessible</h2>
+                    <p>Quality psychiatric care shouldn't be a luxury. Many Indians avoid seeking help because of cost, stigma, or simply not knowing where to find qualified psychiatrists—especially in tier 2 and tier 3 cities.</p>
+                    <p><strong>We're changing that.</strong> Through our Mental Health Champion program, you help bridge the gap between those who need care and affordable, accessible psychiatric services.</p>
+                    <p>Every referral you make helps someone access quality mental healthcare at a reduced cost. You earn for your professional expertise, and your clients save on their journey to better mental health.</p>
                 </div>
                 <div class="two-col-image">
-                    <span class="emoji">🤝</span>
-                    <h3 style="color: var(--orange-primary); font-size: 20px; font-weight: 700;">Trusted Referral Partnership</h3>
+                    <span class="emoji">🇮🇳</span>
+                    <h3 style="color: var(--orange-primary); font-size: 22px; font-weight: 700;">Healthcare for Every Indian</h3>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Stats -->
-    <section class="bg-light">
+    <section>
         <div class="container">
-            <div class="stats-box">
+            <div class="stats-box reveal">
                 <div class="stat-item">
                     <span class="stat-number">11+</span>
                     <span class="stat-label">Qualified Psychiatrists (MBBS, MD)</span>
@@ -691,13 +1031,13 @@
     <!-- How It Works -->
     <section id="how">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-tag">Simple Process</span>
                 <h2 class="section-title">How the Champion Program Works</h2>
                 <p class="section-subtitle">Four simple steps to start referring clients</p>
             </div>
 
-            <div class="how-it-works">
+            <div class="how-it-works reveal">
                 <div class="steps-grid">
                     <div class="step">
                         <div class="step-number">1</div>
@@ -719,93 +1059,47 @@
 
                     <div class="step">
                         <div class="step-number">4</div>
-                        <h4>Track Your Impact</h4>
-                        <p>Monitor referrals and client outcomes in your dashboard</p>
+                        <h4>Track & Earn</h4>
+                        <p>Monitor referrals and earnings in your dashboard</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits - HIGHLIGHTED SECTION -->
-    <section id="benefits" class="bg-light">
+    <!-- Benefits -->
+    <section id="benefits">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Program Benefits</span>
-                <h2 class="section-title">What You Get as a Mental Health Champion</h2>
-                <p class="section-subtitle">Build your professional network while helping clients access comprehensive care</p>
+            <div class="section-header reveal">
+                <span class="section-tag">Our Mission</span>
+                <h2 class="section-title">Join the Movement for Affordable Mental Healthcare</h2>
+                <p class="section-subtitle">Help us make quality psychiatric care accessible across India. When you refer, you earn—and your clients save.</p>
             </div>
 
             <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">🏆</div>
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">💰</div>
                     <div class="benefit-content">
-                        <h4>Professional Recognition Certificate</h4>
-                        <p>Downloadable "Mental Health Champion" certificate to display in your practice or clinic, showcasing your commitment to comprehensive care</p>
+                        <h4>Earn ₹250 Per Referral</h4>
+                        <p>Receive a fixed ₹250 commission for every successful psychiatry consultation booked through your code</p>
                     </div>
                 </div>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon">📱</div>
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">🎁</div>
                     <div class="benefit-content">
-                        <h4>Digital Badge for LinkedIn & Instagram</h4>
-                        <p>Professional badge to add to your social profiles, highlighting your partnership with Rocket Health and strengthening your credibility</p>
+                        <h4>10% Discount for Your Clients</h4>
+                        <p>Your referred clients get an exclusive 10% discount on their first consultation, making care more accessible</p>
                     </div>
                 </div>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon">📊</div>
-                    <div class="benefit-content">
-                        <h4>Personal Impact Dashboard</h4>
-                        <p>Real-time tracking of your referrals, client outcomes, and the impact you're making in mental healthcare accessibility</p>
-                    </div>
-                </div>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon">📚</div>
-                    <div class="benefit-content">
-                        <h4>Exclusive Clinical Resources</h4>
-                        <p>Access to psychiatry guidelines, referral protocols, research papers, and educational materials to share with clients</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">🎓</div>
-                    <div class="benefit-content">
-                        <h4>Monthly Professional Webinars</h4>
-                        <p>Champion-only sessions with psychiatrists covering treatment protocols, medication updates, and collaborative care best practices</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">👥</div>
-                    <div class="benefit-content">
-                        <h4>Professional Network Access</h4>
-                        <p>Connect with other psychologists, therapists, and mental health professionals in an exclusive community for case discussions and collaboration</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">⚡</div>
-                    <div class="benefit-content">
-                        <h4>Priority Client Support</h4>
-                        <p>Your referred clients get priority booking and dedicated support, ensuring seamless coordination between your therapy and their psychiatric care</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">✨</div>
-                    <div class="benefit-content">
-                        <h4>Featured on Our Partners Page</h4>
-                        <p>Recognition on Rocket Health's website as a Mental Health Champion, building your online presence and professional reputation</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- When to Refer -->
-    <section>
+    <section class="reveal" style="background: var(--white);">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Clinical Guidelines</span>
@@ -814,52 +1108,52 @@
             </div>
 
             <div class="grid-2">
-                <div style="background: white; padding: 40px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06);">
-                    <h3 style="color: var(--orange-primary); margin-bottom: 20px;">Clinical Indicators</h3>
+                <div class="card">
+                    <h3 style="color: var(--orange-primary); margin-bottom: 24px; font-size: 22px;">Clinical Indicators</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-700);">
                             <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
                             Symptoms not responding to therapy alone
                         </li>
-                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-700);">
                             <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
                             Suspected mood disorders (bipolar, major depression)
                         </li>
-                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-700);">
                             <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
                             ADHD assessment and medication management needed
                         </li>
-                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-700);">
                             <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
                             Severe OCD with significant functional impairment
                         </li>
-                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-700);">
                             <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
                             Psychotic symptoms or thought disorders
                         </li>
                     </ul>
                 </div>
 
-                <div style="background: white; padding: 40px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06);">
-                    <h3 style="color: var(--orange-primary); margin-bottom: 20px;">Safety & Risk Factors</h3>
+                <div class="card">
+                    <h3 style="color: var(--orange-primary); margin-bottom: 24px; font-size: 22px;">Safety & Risk Factors</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-700);">
                             <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
                             Self-harm ideation or behaviors
                         </li>
-                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-700);">
                             <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
                             Suicidal thoughts requiring medical assessment
                         </li>
-                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-700);">
                             <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
                             Substance use disorders needing medical intervention
                         </li>
-                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-700);">
                             <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
                             Eating disorders requiring medical monitoring
                         </li>
-                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-dark);">
+                        <li style="padding: 12px 0; padding-left: 28px; position: relative; color: var(--gray-700);">
                             <span style="position: absolute; left: 0; color: var(--orange-primary); font-weight: 700;">•</span>
                             Sleep disorders with possible medical causes
                         </li>
@@ -870,7 +1164,7 @@
     </section>
 
     <!-- Impact Stories -->
-    <section class="bg-light">
+    <section class="reveal">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Real Impact</span>
@@ -886,7 +1180,7 @@
                             <p>Clinical Psychologist • 31 referrals</p>
                         </div>
                     </div>
-                    <p class="impact-text">"Many of my clients needed psychiatric evaluation but didn't know where to start. Rocket Health's accessibility and quality made referrals seamless. The coordination between therapy and psychiatry has been excellent."</p>
+                    <p class="impact-text">"Many of my clients couldn't afford private psychiatrists. The 10% discount makes a real difference, and I'm proud to be part of making mental healthcare more accessible."</p>
                 </div>
 
                 <div class="impact-card">
@@ -897,7 +1191,7 @@
                             <p>Counseling Psychologist • 24 referrals</p>
                         </div>
                     </div>
-                    <p class="impact-text">"Having a trusted psychiatric partner has strengthened my practice. Clients appreciate the integrated approach, and I can track their progress across both therapy and medication management."</p>
+                    <p class="impact-text">"It feels good to earn while helping clients access affordable psychiatric care. My clients appreciate the discount, and I appreciate being part of this mission."</p>
                 </div>
 
                 <div class="impact-card">
@@ -908,7 +1202,7 @@
                             <p>Therapist • 18 referrals</p>
                         </div>
                     </div>
-                    <p class="impact-text">"The dashboard helps me understand which clients completed their psychiatric consultations. The professional network and monthly webinars have also been invaluable for my own learning."</p>
+                    <p class="impact-text">"Knowing my clients get quality care at a reduced cost removes a major barrier. The program makes it easy to connect them with the right psychiatrists."</p>
                 </div>
             </div>
         </div>
@@ -917,19 +1211,19 @@
     <!-- Quote Section -->
     <section>
         <div class="container">
-            <div class="quote-section">
-                <p class="quote-text">"Mental health care works best when professionals collaborate. The Champion program creates that bridge between therapy and psychiatry."</p>
+            <div class="quote-section reveal">
+                <p class="quote-text">Mental healthcare is a right, not a privilege. Together, we're making it accessible and affordable for every Indian who needs it.</p>
                 <p class="quote-author">— Dr. Ritika Sinha, Co-Founder, Rocket Health</p>
             </div>
         </div>
     </section>
 
     <!-- Sign Up Form -->
-    <section id="join" class="bg-light">
+    <section id="join">
         <div class="container">
-            <div class="form-section">
+            <div class="form-section reveal">
                 <h3>Join as a Mental Health Champion</h3>
-                <p>Start referring clients to quality psychiatric care today</p>
+                <p>Start referring clients and earning today</p>
 
                 <form id="championForm">
                     <div class="form-group">
@@ -985,7 +1279,7 @@
                         <textarea required placeholder="Share your interest in collaborative mental healthcare..."></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Join as Mental Health Champion →</button>
+                    <button type="submit" class="submit-btn">Join as Mental Health Champion</button>
                 </form>
             </div>
         </div>
@@ -1039,11 +1333,13 @@
     </footer>
 
     <script>
+        // Form submission
         document.getElementById('championForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your interest! This is a demo form. In production, this would submit to your backend and send you the champion details + generate their unique code.');
+            alert('Thank you for your interest! This is a demo form. In production, this would submit to your backend.');
         });
 
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1056,6 +1352,24 @@
                 }
             });
         });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
     </script>
 </body>
 </html>
